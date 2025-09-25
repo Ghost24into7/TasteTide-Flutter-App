@@ -30,6 +30,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.1.1  # Latest BLoC for state management
+  equatable: ^2.0.5  # For immutable state comparison
+  dartz: ^0.10.1  # For functional error handling (Either<Failure, Success>)
+  dio: ^5.7.0  # HTTP client for API calls (better than http)
+  cached_network_image: ^3.4.1  # For efficient image loading
+  google_fonts: ^6.2.1  # For Poppins font (modern, clean for food apps)
+  animations: ^2.0.11  # Official animations package for transitions
+  animate_do: ^4.2.0  # Easy animations for UI elements
+  flutter_spinkit: ^5.2.1  # Loading indicators (trending in 2025)
+  flutter_svg: ^2.0.10  # For SVG icons
+  shared_preferences: ^2.3.2  # For persisting cart (minimal)
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -38,13 +49,15 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  bloc_test: ^10.0.0  # For testing BLoCs
+  mockito: ^5.5.0  # For mocking in tests
+  build_runner: ^2.4.12  # For code gen if needed
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

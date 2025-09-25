@@ -1,8 +1,8 @@
 // lib/features/restaurant/presentation/widgets/restaurant_card.dart (UI Component)
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:animate_do/animate_do.dart';
-import '../../../domain/entities/restaurant.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import '../../domain/entities/restaurant.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../pages/menu_page.dart'; // Next step in workflow
 
@@ -32,7 +32,7 @@ class RestaurantCard extends StatelessWidget {
                   width: 80,
                   height: 80,
                   fit: BoxFit.cover,
-                  placeholder: (context, url) => SpinKitThreeBounce(color: AppTheme.primaryColor, size: 20),
+                  placeholder: (context, url) => const SpinKitFadingCircle(color: AppTheme.primaryColor, size: 20),
                   errorWidget: (context, url, error) => const Icon(Icons.restaurant, size: 40),
                 ),
               ),

@@ -1,6 +1,6 @@
 // lib/features/restaurant/presentation/bloc/restaurant_state.dart
 import 'package:equatable/equatable.dart';
-import '../../../../core/error/failures.dart';
+
 import '../../domain/entities/restaurant.dart';
 
 abstract class RestaurantState extends Equatable {

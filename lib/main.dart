@@ -1,12 +1,14 @@
 // lib/main.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:animations/animations.dart'; // For shared axis transitions
 import 'features/restaurant/presentation/pages/home_page.dart';
+import 'features/cart/presentation/bloc/cart_bloc.dart';
 import 'core/theme/app_theme.dart'; // Custom theme
+import 'injection_container.dart' as di;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   runApp(const FoodOrderApp());
 }
 
@@ -15,13 +17,21 @@ class FoodOrderApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Food Delivery App',
-      theme: AppTheme.lightTheme, // Aesthetically pleasing food-themed theme
-      home: BlocProvider(
-        create: (_) => RestaurantBloc(), // Main BLoC for workflow
-        child: const HomePage(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CartBloc>(
+          create: (context) => CartBloc(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'TasteTide - Food Delivery',
+        theme: AppTheme.lightTheme,
+        home: const HomePage(),
+        debugShowCheckedModeBanner: false,
       ),
     );
   }
 }
+
+// Export as MyApp for tests
+typedef MyApp = FoodOrderApp;

@@ -1,8 +1,7 @@
 // lib/features/restaurant/presentation/bloc/restaurant_bloc.dart (Presentation - BLoC)
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
 import '../../../../core/usecases/usecase.dart';
-import '../../domain/entities/restaurant.dart';
+
 import '../../domain/usecases/get_restaurants.dart';
 import 'restaurant_event.dart';
 import 'restaurant_state.dart';

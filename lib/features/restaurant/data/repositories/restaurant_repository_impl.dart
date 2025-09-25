@@ -17,19 +17,19 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
       final remoteRestaurants = await remoteDataSource.getRestaurants();
       return Right(remoteRestaurants.map((model) => model.toEntity()).toList());
     } on ServerFailure {
-      return Left(ServerFailure());
+      return Left(const ServerFailure(message: 'Server Error'));
     } catch (e) {
-      return Left(ServerFailure());
+      return Left(const ServerFailure(message: 'Unexpected Error'));
     }
   }
 }
 
 extension RestaurantModelToEntity on RestaurantModel {
   Restaurant toEntity() => Restaurant(
-        id: id,
-        name: name,
-        imageUrl: imageUrl,
-        rating: rating,
-        cuisine: cuisine,
+        id: this.id,
+        name: this.name,
+        imageUrl: this.imageUrl,
+        rating: this.rating,
+        cuisine: this.cuisine,
       );
 }

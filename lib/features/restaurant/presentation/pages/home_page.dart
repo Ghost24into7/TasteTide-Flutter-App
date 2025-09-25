@@ -2,11 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:animate_do/animate_do.dart'; // For fade-in animations
-import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter_spinkit/flutter_spinkit.dart'; // Loading
-import '../../../injection_container.dart' as di; // For DI (Dagger-like)
+import '../../../../injection_container.dart' as di; // For DI (Dagger-like)
 import '../bloc/restaurant_bloc.dart';
 import '../bloc/restaurant_event.dart';
+import '../bloc/restaurant_state.dart';
 import '../widgets/restaurant_card.dart';
 import '../../../../core/theme/app_theme.dart';
 
@@ -23,8 +24,8 @@ class HomePage extends StatelessWidget {
         foregroundColor: Colors.white,
         elevation: 0,
       ),
-      body: BlocProvider(
-        create: (_) => di.sl<RestaurantBloc>()..add(LoadRestaurants()),
+      body: BlocProvider<RestaurantBloc>(
+        create: (context) => di.sl<RestaurantBloc>()..add(LoadRestaurants()),
         child: BlocBuilder<RestaurantBloc, RestaurantState>(
           builder: (context, state) {
             if (state is RestaurantLoading) {
@@ -36,9 +37,9 @@ class HomePage extends StatelessWidget {
                 duration: const Duration(milliseconds: 600),
                 child: ListView.builder(
                   padding: const EdgeInsets.all(16),
-                  itemCount: state.restaurants.length,
+                  itemCount: state.restaurants!.length,
                   itemBuilder: (context, index) {
-                    final restaurant = state.restaurants[index];
+                    final restaurant = state.restaurants![index];
                     return FadeIn(
                       delay: Duration(milliseconds: index * 100), // Staggered animation
                       child: RestaurantCard(restaurant: restaurant),

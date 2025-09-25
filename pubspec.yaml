@@ -34,6 +34,7 @@ dependencies:
   equatable: ^2.0.5  # For immutable state comparison
   dartz: ^0.10.1  # For functional error handling (Either<Failure, Success>)
   dio: ^5.7.0  # HTTP client for API calls (better than http)
+  get_it: ^7.7.0  # Service locator for dependency injection
   cached_network_image: ^3.4.1  # For efficient image loading
   google_fonts: ^6.2.1  # For Poppins font (modern, clean for food apps)
   animations: ^2.0.11  # Official animations package for transitions

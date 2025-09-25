@@ -1,71 +1,3 @@
-To address the task of "solving all the problems" from the provided README.md file for the TasteTide Flutter application, we need to identify any issues or gaps in the provided documentation and ensure it is complete, accurate, and adheres to best practices. Since the README already covers the requirements comprehensively, the task likely involves refining the document, fixing inconsistencies, addressing missing elements (e.g., placeholders like app screenshots), and ensuring clarity for developers and users. Below, I will analyze the README, identify potential improvements, and provide an updated `README.md` file.
-
-### Analysis of the Provided README.md
-
-1. **Placeholder for Screenshots**:
-   - The README mentions "Note: Add actual app screenshots here" under the "App Screenshots" section. This is a gap that needs to be addressed by either providing placeholder image links or describing the screenshots in more detail to guide users.
-
-2. **Incomplete Instructions**:
-   - The "Getting Started" section at the end seems to be a default Flutter template and is redundant given the detailed "Getting Started" section earlier. This should be removed or merged to avoid confusion.
-
-3. **Mermaid Diagram**:
-   - The Mermaid diagram is well-defined, but it could benefit from minor formatting adjustments for clarity or additional details for future features like "Order Tracking."
-
-4. **Dependencies**:
-   - The dependencies listed (e.g., `flutter_bloc: ^9.1.1`) might be outdated by September 25, 2025. While the README doesn't explicitly require updating versions, ensuring compatibility with Flutter 3.x and Dart 3.x is implied.
-
-5. **Testing Instructions**:
-   - The testing section is clear, but it could include instructions for generating coverage reports (e.g., using `lcov`) to make it more comprehensive.
-
-6. **Contributing Guidelines**:
-   - The contributing section is basic. Adding more detailed guidelines (e.g., coding standards, issue reporting) could improve collaboration.
-
-7. **Potential Typos and Formatting**:
-   - The final line, "*Built with ❤️ using Flutter and following clean architecture principles*ment", contains a typo ("principles*ment"). This should be corrected.
-   - The YAML dependencies could be formatted more clearly with comments aligned consistently.
-
-8. **Missing Details**:
-   - The README could include a section on troubleshooting common issues (e.g., dependency conflicts, emulator setup).
-   - A note on supported platforms (Android, iOS) and minimum versions could clarify compatibility.
-
-9. **License File Reference**:
-   - The README references a `LICENSE` file but doesn't confirm its existence. Including a snippet or ensuring the file is present in the repository is good practice.
-
-### Improvements to Address the Problems
-
-1. **Replace Screenshot Placeholder**:
-   - Replace the placeholder with descriptive text or links to sample images hosted online (e.g., on GitHub or a CDN).
-
-2. **Remove Redundant "Getting Started" Section**:
-   - Eliminate the default Flutter template section to streamline the document.
-
-3. **Enhance Mermaid Diagram**:
-   - Add a note about future features like "Order Tracking" to clarify its status.
-
-4. **Update Dependencies**:
-   - Since the exact versions might be outdated, I'll note that users should check for the latest compatible versions but keep the structure intact unless specific updates are required.
-
-5. **Expand Testing Instructions**:
-   - Add a command for generating and viewing test coverage reports.
-
-6. **Improve Contributing Guidelines**:
-   - Add details on coding standards, issue templates, and pull request expectations.
-
-7. **Fix Typos and Formatting**:
-   - Correct the typo in the final line.
-   - Align YAML comments for better readability.
-
-8. **Add Troubleshooting Section**:
-   - Include common issues and solutions (e.g., emulator setup, dependency errors).
-
-9. **Clarify License**:
-   - Confirm the MIT License details with a brief snippet or ensure the file is referenced correctly.
-
-### Final README.md File
-
-Below is the updated `README.md` file with all improvements incorporated:
-
-```markdown
 # 🍽️ TasteTide - Food Delivery App
 
 **A modern, feature-rich food delivery application built with Flutter, showcasing clean architecture, BLoC state management, and delightful user experiences.**
@@ -76,19 +8,20 @@ Below is the updated `README.md` file with all improvements incorporated:
 
 ## 📱 App Overview
 
-TasteTide is a comprehensive food delivery application that allows users to browse restaurants, view menus, manage their cart, and place orders with a seamless user experience. The app features authentic Indian cuisine with rupee pricing and follows modern Flutter development best practices.
+TasteTide is a comprehensive food delivery application that enables users to browse restaurants, view menus, manage their cart, and place orders seamlessly. It features authentic Indian cuisine with rupee pricing and adheres to modern Flutter development best practices.
 
 ### ✨ Key Features
 
-- 🏪 **Restaurant Discovery**: Browse through curated Indian restaurants
+- 🏪 **Restaurant Discovery**: Browse curated Indian restaurants
 - 🔍 **Smart Search**: Real-time filtering of restaurants and cuisines
 - 🛒 **Dynamic Cart Management**: Real-time cart updates with quantity controls
-- 💳 **Secure Checkout**: Comprehensive ordering process with multiple payment options
+- 💳 **Secure Checkout**: Comprehensive ordering with multiple payment options
 - 🎨 **Beautiful Animations**: Smooth transitions and engaging micro-interactions
 - 📱 **Responsive Design**: Optimized for various screen sizes
-- ₹ **Indian Currency**: Prices displayed in Indian Rupees (INR)
+- ₹ **Indian Currency**: Prices in Indian Rupees (INR)
 
 ## 🏗️ Application Workflow
+
 
 ```mermaid
 graph TD
@@ -127,7 +60,7 @@ graph TD
     W --> X{Post-Order Actions}
     
     X -->|Order More| B
-    X -->|Track Order| Y[Order Tracking - Planned Feature]
+    X -->|Track Order| Y[Order Tracking - Planned]
     
     subgraph "State Management"
         Z[RestaurantBloc]
@@ -136,7 +69,7 @@ graph TD
     
     subgraph "Error Handling"
         BB[Network Errors]
-        CC[Validation Errors] 
+        CC[Validation Errors]
         DD[User Feedback]
     end
     
@@ -148,21 +81,21 @@ graph TD
     end
 ```
 
-*Note: Order Tracking is a planned feature for future releases.*
+*Note: View the diagram on GitHub or use a Mermaid-compatible Markdown viewer (e.g., VS Code with the Markdown Preview Mermaid Support plugin) to ensure proper rendering.*
 
 ## 🎯 Requirements Compliance
 
-This application fully satisfies all 7 specified requirements:
+The application meets all seven specified requirements:
 
 ### 1. ✅ BLoC Architecture Implementation
 
-**Requirement**: *Use the BloC architecture for state management*
+**Requirement**: *Use the BLoC architecture for state management*
 
 **Implementation**:
-- **RestaurantBloc**: Manages restaurant loading states and data
+- **RestaurantBloc**: Manages restaurant data and states
   - Events: `LoadRestaurants`
   - States: `RestaurantInitial`, `RestaurantLoading`, `RestaurantLoaded`, `RestaurantError`
-- **CartBloc**: Handles shopping cart operations
+- **CartBloc**: Handles cart operations
   - Events: `AddToCart`, `RemoveFromCart`, `UpdateQuantity`, `ClearCart`, `LoadCart`
   - States: `CartInitial`, `CartLoading`, `CartLoaded`, `CartError`
 
@@ -181,33 +114,33 @@ lib/features/
 
 ### 2. ✅ Realistic Food Delivery Workflow
 
-**Requirement**: *Make the steps in the workflow as realistic as possible*
+**Requirement**: *Make the workflow steps as realistic as possible*
 
 **Implementation**:
-1. **Home Screen**: Browse restaurants with search functionality
-2. **Restaurant Selection**: View restaurant details and ratings
-3. **Menu Browsing**: Explore authentic Indian dishes with descriptions
+1. **Home Screen**: Browse restaurants with search
+2. **Restaurant Selection**: View details and ratings
+3. **Menu Browsing**: Explore Indian dishes with descriptions
 4. **Cart Management**: Add/remove items with quantity controls
-5. **Checkout Process**: 
-   - Customer information (name, phone, address)
-   - Payment method selection (Cash on Delivery, Card)
-   - Order notes and special instructions
-6. **Order Confirmation**: Complete order summary with delivery time estimate
+5. **Checkout Process**:
+   - Customer info (name, phone, address)
+   - Payment methods (Cash on Delivery, Card)
+   - Order notes
+6. **Order Confirmation**: Summary with delivery time estimate
 
 **Realistic Elements**:
 - Indian restaurant names and cuisines
-- Authentic dish names with descriptions
-- Realistic pricing in Indian Rupees (₹120-₹320)
-- Delivery time estimates (25-35 minutes)
+- Authentic dish names
+- Pricing in INR (₹120-₹320)
+- Delivery estimates (25-35 minutes)
 - Multiple payment options
 
 ### 3. ✅ Comprehensive Error Handling
 
-**Requirement**: *The workflow should have proper error handling mechanisms*
+**Requirement**: *Include proper error handling mechanisms*
 
 **Implementation**:
-- **Functional Error Handling**: Using `Either<Failure, Success>` pattern with `dartz` package
-- **Custom Failure Types**:
+- **Functional Error Handling**: Uses `Either<Failure, Success>` with `dartz`
+- **Custom Failures**:
   ```dart
   abstract class Failure {}
   class ServerFailure extends Failure {
@@ -215,49 +148,48 @@ lib/features/
   }
   class CacheFailure extends Failure {}
   ```
-- **UI Error States**: User-friendly error messages with retry functionality
-- **Form Validation**: Input validation for checkout process
-- **Network Error Handling**: Graceful handling of API failures
-- **Loading States**: Proper loading indicators during async operations
+- **UI Feedback**: User-friendly error messages with retry
+- **Form Validation**: Input checks during checkout
+- **Network Handling**: Graceful API failure management
+- **Loading States**: Indicators for async operations
 
 ### 4. ✅ No Authentication Required
 
-**Requirement**: *No need for login or any other screens. Only the workflow is required*
+**Requirement**: *No login or additional screens; focus on workflow*
 
 **Implementation**:
-- Direct access to restaurant browsing upon app launch
-- No login, registration, or authentication screens
-- Guest checkout process without user accounts
-- Focus purely on the food ordering workflow
-- Streamlined user experience without barriers
+- Direct restaurant browsing on launch
+- No login/registration
+- Guest checkout
+- Streamlined ordering process
 
 ### 5. ✅ Aesthetically Pleasing Design
 
-**Requirement**: *Use aesthetically pleasing design elements to make your assignment stand out*
+**Requirement**: *Use aesthetically pleasing design elements*
 
 **Implementation**:
-- **Brand Identity**: TasteTide branding with custom logo and tagline
-- **Color Scheme**: Warm orange (#FF6B35) primary color with golden accents
-- **Typography**: Google Fonts Poppins for modern, clean appearance
-- **Animations**: 
-  - Staggered fade-in animations for restaurant cards
-  - Slide transitions between screens
-  - Pulsing cart button animation
-  - Bounce effects for error states
-- **Visual Elements**:
-  - Gradient backgrounds and promotional banners
-  - Cached network images with loading placeholders
-  - Custom card designs with shadows and rounded corners
-  - Real-time cart badge with item count
-- **Material Design 3**: Latest design system implementation
+- **Brand Identity**: TasteTide logo and tagline
+- **Color Scheme**: Orange (#FF6B35) with golden accents
+- **Typography**: Google Fonts Poppins
+- **Animations**:
+  - Fade-in restaurant cards
+  - Slide screen transitions
+  - Pulsing cart button
+  - Bounce error effects
+- **Visuals**:
+  - Gradient backgrounds
+  - Cached images with placeholders
+  - Custom cards with shadows
+  - Real-time cart badge
+- **Material Design 3**: Modern UI standards
 
 ### 6. ✅ SOLID Principles Architecture
 
-**Requirement**: *Architect and structure the code with proper SOLID principles*
+**Requirement**: *Structure code with SOLID principles*
 
 **Implementation**:
 
-**Clean Architecture Structure**:
+**Clean Architecture**:
 ```
 lib/
 ├── core/                    # Shared utilities
@@ -266,41 +198,41 @@ lib/
 │   └── usecases/           # Base use case
 ├── features/               # Feature modules
 │   ├── restaurant/
-│   │   ├── domain/         # Business logic layer
-│   │   │   ├── entities/   # Core business objects
-│   │   │   ├── repositories/ # Abstract contracts
-│   │   │   └── usecases/   # Business use cases
-│   │   ├── data/           # Data access layer
-│   │   │   ├── datasources/ # External data sources
-│   │   │   ├── models/     # Data transfer objects
-│   │   │   └── repositories/ # Repository implementations
+│   │   ├── domain/         # Business logic
+│   │   │   ├── entities/   # Business objects
+│   │   │   ├── repositories/ # Contracts
+│   │   │   └── usecases/   # Use cases
+│   │   ├── data/           # Data layer
+│   │   │   ├── datasources/ # Data sources
+│   │   │   ├── models/     # DTOs
+│   │   │   └── repositories/ # Implementations
 │   │   └── presentation/   # UI layer
 │   │       ├── bloc/       # State management
-│   │       ├── pages/      # Screen widgets
-│   │       └── widgets/    # Reusable UI components
-│   ├── cart/              # Similar structure
-│   └── order/             # Similar structure
+│   │       ├── pages/      # Screens
+│   │       └── widgets/    # UI components
+│   ├── cart/               # Similar structure
+│   └── order/              # Similar structure
 └── injection_container.dart # Dependency injection
 ```
 
-**SOLID Principles Applied**:
-- **Single Responsibility**: Each class has one clear purpose
-- **Open/Closed**: Interfaces allow extension without modification
-- **Liskov Substitution**: Proper inheritance hierarchy
-- **Interface Segregation**: Specific, focused interfaces
-- **Dependency Inversion**: Abstractions over concrete implementations
+**SOLID Principles**:
+- **Single Responsibility**: One purpose per class
+- **Open/Closed**: Extensible interfaces
+- **Liskov Substitution**: Proper inheritance
+- **Interface Segregation**: Focused interfaces
+- **Dependency Inversion**: Abstraction-based dependencies
 
-**Dependency Injection**: Using `get_it` service locator pattern
+**Dependency Injection**: Uses `get_it`
 
 ### 7. ✅ Comprehensive Unit Testing
 
-**Requirement**: *Unit Tests for the workflow should be present*
+**Requirement**: *Include unit tests for the workflow*
 
 **Implementation**:
-- **BLoC Testing**: Complete test coverage for all BLoCs
-  - `CartBloc` tests: Add, remove, update, clear operations
-  - `RestaurantBloc` tests: Success and failure scenarios with mocking
-- **Mock Objects**: Using `mockito` for dependency mocking
+- **BLoC Testing**: Covers all BLoC events/states
+  - `CartBloc`: Tests add/remove/update/clear
+  - `RestaurantBloc`: Tests success/failure
+- **Mocks**: Uses `mockito`
 - **Test Structure**:
   ```
   test/
@@ -312,18 +244,18 @@ lib/
   │       └── restaurant_bloc_test.mocks.dart
   └── widget_test.dart
   ```
-- **Coverage**: All critical user workflows tested
-- **Test Results**: All tests passing with proper assertions
+- **Coverage**: Tests all critical workflows
+- **Results**: All tests pass
 
 ## 🛠️ Technical Stack
 
 - **Framework**: Flutter 3.x
 - **Language**: Dart 3.x
-- **State Management**: BLoC Pattern (`flutter_bloc`)
-- **Architecture**: Clean Architecture with SOLID principles
+- **State Management**: BLoC (`flutter_bloc`)
+- **Architecture**: Clean Architecture with SOLID
 - **Dependency Injection**: `get_it`
-- **Error Handling**: `dartz` (Either types)
-- **UI Components**: Material Design 3
+- **Error Handling**: `dartz` (Either)
+- **UI**: Material Design 3
 - **Typography**: Google Fonts (Poppins)
 - **Animations**: `animate_do`, `flutter_spinkit`
 - **Images**: `cached_network_image`
@@ -333,35 +265,34 @@ lib/
 
 ```yaml
 dependencies:
-  flutter_bloc: ^9.1.1       # State management
-  equatable: ^2.0.5         # Value equality
-  dartz: ^0.10.1            # Functional programming
-  get_it: ^7.7.0            # Service locator
+  flutter_bloc: ^9.1.1        # State management
+  equatable: ^2.0.5          # Value equality
+  dartz: ^0.10.1             # Functional programming
+  get_it: ^7.7.0             # Service locator
   cached_network_image: ^3.4.1 # Image caching
   google_fonts: ^6.2.1       # Typography
-  animate_do: ^4.2.0        # Animations
-  flutter_spinkit: ^5.2.1   # Loading indicators
+  animate_do: ^4.2.0         # Animations
+  flutter_spinkit: ^5.2.1    # Loading indicators
 
 dev_dependencies:
-  flutter_test:             # Flutter testing
+  flutter_test:              # Flutter testing
   bloc_test: ^10.0.0        # BLoC testing
   mockito: ^5.5.0           # Mocking
   build_runner: ^2.4.12     # Code generation
 ```
 
-*Note: Ensure you use the latest compatible versions of dependencies for Flutter 3.x and Dart 3.x by running `flutter pub upgrade`.*
+*Note: Run `flutter pub upgrade` to ensure the latest compatible versions for Flutter 3.x and Dart 3.x.*
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Flutter SDK (3.x or higher)
-- Dart SDK (3.x or higher)
-- Android Studio / VS Code
-- Android emulator or iOS simulator
-- Supported platforms: Android (API 21+) and iOS (12.0+)
+- Flutter SDK (3.x+)
+- Dart SDK (3.x+)
+- Android Studio or VS Code
+- Android emulator (API 21+) or iOS simulator (12.0+)
 
-### Installation Steps
+### Installation
 
 1. **Clone the repository**
    ```bash
@@ -374,12 +305,12 @@ dev_dependencies:
    flutter pub get
    ```
 
-3. **Generate mock files (for testing)**
+3. **Generate mocks (for testing)**
    ```bash
    flutter packages pub run build_runner build
    ```
 
-4. **Run the application**
+4. **Run the app**
    ```bash
    flutter run
    ```
@@ -389,7 +320,7 @@ dev_dependencies:
    flutter test
    ```
 
-### Build for Production
+### Production Builds
 
 ```bash
 # Android APK
@@ -405,73 +336,72 @@ flutter build ios --release
 ## 📱 App Screenshots
 
 ### Home Screen
-Displays a gradient header with the TasteTide logo, a search bar, and a scrollable list of Indian restaurants with fade-in animations.
+Gradient header with TasteTide logo, search bar, and animated restaurant list.
 
-*Sample*: [Home Screen](https://via.placeholder.com/300x600.png?text=Home+Screen)
+<img width="369" height="773" alt="image" src="https://github.com/user-attachments/assets/81687182-5413-4b6d-a6d5-7868600679c3" />
+
 
 ### Restaurant Menu
-Showcases authentic Indian dishes with images, descriptions, and prices in INR, featuring an animated "Add to Cart" button.
+Indian dishes with images, descriptions, INR prices, and animated "Add to Cart" button.
 
-*Sample*: [Menu Screen](https://via.placeholder.com/300x600.png?text=Menu+Screen)
+<img width="366" height="775" alt="image" src="https://github.com/user-attachments/assets/5e9c456b-919b-47df-afdf-fa6240c9e653" />
+
 
 ### Shopping Cart
-Real-time updates with item quantities, totals, and a smooth transition to the checkout process.
+Real-time updates for quantities and totals, with smooth checkout transition.
 
-*Sample*: [Cart Screen](https://via.placeholder.com/300x600.png?text=Cart+Screen)
+<img width="364" height="767" alt="image" src="https://github.com/user-attachments/assets/042c522e-5892-42fc-bc72-7da065116319" />
 
 ### Checkout & Confirmation
-A form-validated checkout flow with delivery details, payment options, and a delightful order confirmation animation.
+Form-validated checkout with delivery details, payment options, and confirmation animation.
 
-*Sample*: [Checkout Screen](https://via.placeholder.com/300x600.png?text=Checkout+Screen)
+<img width="364" height="770" alt="image" src="https://github.com/user-attachments/assets/c9b3ba17-db08-4280-ab81-90763bc9ea63" />
+<img width="367" height="774" alt="image" src="https://github.com/user-attachments/assets/9bc500ec-594c-4314-a883-c17c7f802b7d" />
+<img width="364" height="774" alt="image" src="https://github.com/user-attachments/assets/b807a20e-7e64-4d51-acfe-e3c98ac58bd4" />
+<img width="368" height="774" alt="image" src="https://github.com/user-attachments/assets/bd884379-8fa9-4bb0-a4ce-d5adf3fce99f" />
 
-## 🏃‍♂️ How to Run the App
+## 🏃‍♂️ Running the App
 
-### Option 1: Using Android Studio
-1. Open Android Studio
-2. Click "Open an existing project"
-3. Select the project folder
-4. Wait for dependencies to download
-5. Click the "Run" button or press Ctrl+F5
+### Android Studio
+1. Open project in Android Studio
+2. Sync dependencies
+3. Select device/emulator
+4. Click "Run" or press Ctrl+F5
 
-### Option 2: Using VS Code
-1. Open VS Code
-2. Install Flutter and Dart extensions
-3. Open the project folder
-4. Press F5 or use the Run menu
-5. Select your device/emulator
+### VS Code
+1. Open project in VS Code
+2. Install Flutter/Dart extensions
+3. Press F5 or use Run menu
+4. Select device/emulator
 
-### Option 3: Command Line
+### Command Line
 ```bash
-# Ensure Flutter is installed and in PATH
+# Verify setup
 flutter doctor
 
-# Navigate to project directory
+# Navigate to project
 cd path/to/TasteTide-Flutter-App
 
-# Get dependencies
+# Install dependencies
 flutter pub get
 
-# Run on connected device
-flutter run
-
-# Or specify device
+# Run app
 flutter run -d <device-id>
 ```
 
 ## 🧪 Testing
 
-Run the complete test suite:
 ```bash
 # Run all tests
 flutter test
 
 # Run with coverage
 flutter test --coverage
-# Generate coverage report (requires lcov)
+# View coverage (requires lcov)
 genhtml coverage/lcov.info -o coverage/html
 open coverage/html/index.html
 
-# Run specific test file
+# Run specific test
 flutter test test/features/cart/presentation/bloc/cart_bloc_test.dart
 ```
 
@@ -484,10 +414,14 @@ flutter test test/features/cart/presentation/bloc/cart_bloc_test.dart
 
 ## 🛠️ Troubleshooting
 
-- **Dependency Conflicts**: Run `flutter pub upgrade` to resolve version mismatches.
-- **Emulator Issues**: Ensure your emulator supports API 21+ (Android) or iOS 12.0+. Check `flutter doctor` for setup issues.
-- **Build Errors**: Run `flutter clean` and rebuild the project. Ensure all dependencies are compatible with Flutter 3.x.
-- **Mock Generation**: If mocks fail to generate, run `flutter packages pub run build_runner build --delete-conflicting-outputs`.
+- **Mermaid Diagram Not Rendering**:
+  - View on GitHub or use a Mermaid-compatible viewer (e.g., VS Code with Markdown Preview Mermaid Support plugin).
+  - Ensure browser is updated (Chrome, Firefox, or Edge recommended).
+  - Test diagram at [mermaid.live](https://mermaid.live).
+- **Dependency Conflicts**: Run `flutter pub upgrade` to resolve.
+- **Emulator Issues**: Ensure emulator supports API 21+ (Android) or iOS 12.0+. Verify with `flutter doctor`.
+- **Build Errors**: Run `flutter clean` and rebuild. Check dependency versions.
+- **Mock Generation**: Use `flutter packages pub run build_runner build --delete-conflicting-outputs` if mocks fail.
 
 ## 📁 Project Structure
 
@@ -513,25 +447,23 @@ lib/
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Follow coding standards:
-   - Use Dart linter rules (`flutter analyze`)
-   - Format code with `flutter format .`
-   - Write unit tests for new features
-4. Commit your changes (`git commit -m 'Add amazing feature'`)
-5. Push to the branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request with a clear description and reference to any related issues
+3. Follow standards:
+   - Run `flutter analyze` for linting
+   - Format with `flutter format .`
+   - Add unit tests for new features
+4. Commit changes (`git commit -m 'Add amazing feature'`)
+5. Push branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request with detailed description
 
-**Issue Reporting**: Use the GitHub Issues tab to report bugs or suggest features, providing detailed steps to reproduce and expected behavior.
+**Issues**: Report bugs or suggest features via GitHub Issues, including steps to reproduce and expected behavior.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ```text
 MIT License
-
 Copyright (c) 2025 Ghost24into7
-
 ```
 
 ## 👤 Author
@@ -539,8 +471,13 @@ Copyright (c) 2025 Ghost24into7
 **Ghost24into7**
 - GitHub: [@Ghost24into7](https://github.com/Ghost24into7)
 
+## 🙏 Acknowledgments
+
+- [Flutter](https://flutter.dev) for the framework
+- [Material Design](https://m3.material.io) for UI guidelines
+- [Unsplash](https://unsplash.com) for food images
+- Indian cuisine for inspiration
+
 ---
 
 *Built with ❤️ using Flutter and following clean architecture principles*
-```
-

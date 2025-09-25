@@ -111,7 +111,7 @@ class CartPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '\$${state.totalAmount.toStringAsFixed(2)}',
+                          '₹${state.totalAmount.toInt()}',
                           style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -217,7 +217,7 @@ class CartItemCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '\$${item.price.toStringAsFixed(2)}',
+                    '₹${item.price.toInt()}',
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -263,7 +263,7 @@ class CartItemCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  '\$${item.totalPrice.toStringAsFixed(2)}',
+                  '₹${item.totalPrice.toInt()}',
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,

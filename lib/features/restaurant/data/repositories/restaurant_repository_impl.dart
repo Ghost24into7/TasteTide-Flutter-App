@@ -27,9 +27,9 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
 extension RestaurantModelToEntity on RestaurantModel {
   Restaurant toEntity() => Restaurant(
         id: this.id,
-        name: this.name,
-        imageUrl: this.imageUrl,
-        rating: this.rating,
-        cuisine: this.cuisine,
+        name: name,
+        imageUrl: imageUrl,
+        rating: rating,
+        cuisine: cuisine,
       );
 }

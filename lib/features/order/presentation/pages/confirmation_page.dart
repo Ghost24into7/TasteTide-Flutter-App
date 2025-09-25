@@ -105,7 +105,7 @@ class ConfirmationPage extends StatelessWidget {
                             _buildDetailRow(
                               icon: Icons.attach_money,
                               label: 'Total Amount',
-                              value: '\$${orderDetails.totalAmount.toStringAsFixed(2)}',
+                              value: '₹${orderDetails.totalAmount.toInt()}',
                             ),
                             _buildDetailRow(
                               icon: Icons.payment,

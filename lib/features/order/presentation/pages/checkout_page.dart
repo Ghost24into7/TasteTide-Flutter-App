@@ -114,7 +114,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                           ),
                         ),
                         Text(
-                          '\$${cartState.totalAmount.toStringAsFixed(2)}',
+                          '₹${cartState.totalAmount.toInt()}',
                           style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -191,7 +191,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     ),
                   ),
                   Text(
-                    '\$${item.totalPrice.toStringAsFixed(2)}',
+                    '₹${item.totalPrice.toInt()}',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: AppTheme.textPrimary,
@@ -213,7 +213,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   ),
                 ),
                 Text(
-                  '\$${cartState.totalAmount.toStringAsFixed(2)}',
+                  '₹${cartState.totalAmount.toInt()}',
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,

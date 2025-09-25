@@ -14,35 +14,49 @@ class MenuPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Mock menu items with proper structure
+    // Mock menu items with Indian dishes and rupee pricing
     final menuItems = [
       {
         'id': 1,
-        'name': 'Classic Burger',
-        'price': 12.99,
-        'image': 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400',
-        'description': 'Juicy beef patty with lettuce, tomato, and cheese'
+        'name': 'Butter Chicken',
+        'price': 280.0,
+        'image': 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=400',
+        'description': 'Creamy tomato-based curry with tender chicken pieces'
       },
       {
         'id': 2,
-        'name': 'Margherita Pizza',
-        'price': 15.99,
-        'image': 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400',
-        'description': 'Fresh mozzarella, basil, and tomato sauce'
+        'name': 'Paneer Tikka Masala',
+        'price': 240.0,
+        'image': 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400',
+        'description': 'Grilled paneer in rich and creamy tomato gravy'
       },
       {
         'id': 3,
-        'name': 'Caesar Salad',
-        'price': 9.99,
-        'image': 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400',
-        'description': 'Crisp romaine lettuce with caesar dressing'
+        'name': 'Biryani (Chicken)',
+        'price': 320.0,
+        'image': 'https://images.unsplash.com/photo-1563379091339-03246963d51a?w=400',
+        'description': 'Aromatic basmati rice with spiced chicken and saffron'
       },
       {
         'id': 4,
-        'name': 'Chicken Wings',
-        'price': 13.99,
-        'image': 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400',
-        'description': 'Spicy buffalo wings with ranch dip'
+        'name': 'Masala Dosa',
+        'price': 120.0,
+        'image': 'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400',
+        'description': 'Crispy crepe filled with spiced potato mixture'
+      },
+      {
+        'id': 5,
+        'name': 'Chole Bhature',
+        'price': 160.0,
+        'image': 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400',
+        'description': 'Spicy chickpeas curry with fluffy fried bread'
+      },
+      {
+        'id': 6,
+        'name': 'Tandoori Roti',
+        'price': 25.0,
+        'image': 'https://images.unsplash.com/photo-1574653985050-7cedc6580cd8?w=400',
+        'description': 'Fresh wheat bread cooked in tandoor oven'
       },
     ];
 
@@ -194,7 +208,7 @@ class MenuPage extends StatelessWidget {
                               ),
                               const SizedBox(height: 8),
                               Text(
-                                '\$${(item['price']! as double).toStringAsFixed(2)}',
+                                '₹${(item['price']! as double).toInt()}',
                                 style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
